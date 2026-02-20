@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Quicksand", sans-serif;
+  --font-body: "Nunito", sans-serif;
+
+  --color-background: #FAF6F1;
+  --color-foreground: #3B2F2F;
+  --color-primary: #C67A5C;
+  --color-secondary: #8B9E7E;
+  --color-muted: #EDE6DC;
+  --color-accent: #D4A96A;
+  --color-border: #DDD5CA;
+}
+
+:root {
+  --background: #FAF6F1;
+  --foreground: #3B2F2F;
+  --primary: #C67A5C;
+  --secondary: #8B9E7E;
+  --muted: #EDE6DC;
+  --accent: #D4A96A;
+  --border: #DDD5CA;
+}
+
+.dark {
+  --background: #1C1816;
+  --foreground: #F0EAE2;
+  --primary: #D4896E;
+  --secondary: #6B7E5E;
+  --muted: #2A2320;
+  --accent: #C9985A;
+  --border: #3D342C;
+}
+
+* {
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  * {
+    cursor: auto;
+  }
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Smooth scroll handled by Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
