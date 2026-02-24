@@ -56,25 +56,55 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    company: "Your Company",
-    role: "Software Engineer Intern",
-    startDate: "Summer 2025",
-    endDate: "Present",
+    company: "TikTok",
+    role: "Technical Product Management Intern",
+    startDate: "Jan 2026",
+    endDate: "Mar 2026",
     current: true,
     bullets: [
-      "Placeholder — replace with your real experience",
-      "Built features, fixed bugs, shipped code",
+      "Built end-to-end LLM content moderation eval pipeline for TikTok LIVE, improving model quality to ~90% precision/recall",
+      "Implemented prompt-engineering and dataset curation workflows with few-shot/zero-shot prompting and hard-negative mining",
+      "Developed monitoring dashboards surfacing confusion matrices, per-category breakdowns, and drift signals from production logs",
     ],
   },
   {
-    company: "University Project",
-    role: "Full-Stack Developer",
-    startDate: "Jan 2025",
-    endDate: "May 2025",
+    company: "Stripe",
+    role: "Software Engineering Intern",
+    startDate: "Jun 2025",
+    endDate: "Aug 2025",
     bullets: [
-      "Built Mirrorless — an AI-powered smart mirror",
-      "Designed real-time streaming architecture with Socket.io",
-      "Integrated Claude AI, MediaPipe, and ElevenLabs TTS",
+      "Built an LLM-powered analysis agent integrated with Stripe's internal knowledge base, reducing query latency by 50%",
+      "Analyzed 5 years of payments data and developed regression models for variance analysis to improve forecast accuracy",
+      "Implemented a new framework for analyzing Stripe Connect users at cohort level, potentially driving $220M revenue impact",
+    ],
+  },
+  {
+    company: "Jade",
+    role: "Co-Founder",
+    startDate: "Sep 2024",
+    endDate: "Mar 2025",
+    bullets: [
+      "Built backend on Supabase with 1M+ indexed fashion product images from web scraping using Firecrawl and SerpAPI",
+      "Developed recommendation algorithms in Python (NumPy, PyTorch) with diffusion model pipeline for personalized styling",
+      "Led 10+ user testing sessions across 5,000+ users, achieving 30% increase in customer satisfaction scores",
+    ],
+  },
+  {
+    company: "Felicis Ventures",
+    role: "Venture Fellow",
+    startDate: "2024",
+    endDate: "Present",
+    bullets: [
+      "Venture fellow at Felicis, evaluating early-stage startups and supporting portfolio companies",
+    ],
+  },
+  {
+    company: "AGI House",
+    role: "Developer Relations",
+    startDate: "2024",
+    endDate: "Present",
+    bullets: [
+      "Developer relations at AGI House — the hacker house where LlamaIndex and LangChain started",
     ],
   },
 ];

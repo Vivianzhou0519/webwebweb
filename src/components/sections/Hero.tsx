@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -19,6 +20,36 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
+function TypewriterName() {
+  const fullName = "Vivian Zhou";
+  const [displayed, setDisplayed] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayed(fullName.slice(0, i));
+      if (i >= fullName.length) {
+        clearInterval(interval);
+        setTimeout(() => setShowCursor(false), 1500);
+      }
+    }, 120);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      {displayed}
+      <span
+        className={`inline-block w-[3px] h-[0.85em] bg-[var(--primary)] ml-1 align-baseline ${
+          showCursor ? "animate-[blink_0.8s_steps(1)_infinite]" : "opacity-0"
+        }`}
+      />
+    </>
+  );
+}
+
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-16 relative overflow-hidden">
@@ -35,18 +66,11 @@ export function Hero() {
         animate="show"
         className="text-center max-w-3xl"
       >
-        <motion.p
-          variants={item}
-          className="text-[var(--primary)] font-[family-name:var(--font-heading)] text-lg mb-4"
-        >
-          hey there!
-        </motion.p>
-
         <motion.h1
           variants={item}
           className="font-[family-name:var(--font-heading)] text-5xl md:text-7xl font-bold text-[var(--foreground)] mb-6"
         >
-          I&apos;m Vivian
+          <TypewriterName />
         </motion.h1>
 
         <motion.p
