@@ -1,4 +1,4 @@
-import { Project, Experience, Photo, Thought } from "@/types";
+import { Project, Experience, Photo, Thought, Album } from "@/types";
 
 export const projects: Project[] = [
   {
@@ -151,5 +151,59 @@ export const thoughts: Thought[] = [
       "The gap between 'it works on my machine' and 'it works in production' is where all the learning happens.",
     type: "reflection",
     date: "Dec 2024",
+  },
+];
+
+// Each record in the crate is "one part of me" — pull it onto the
+// turntable and its tracklist plays.
+export const albums: Album[] = [
+  {
+    id: "built",
+    title: "Things I've Built",
+    side: "the maker in me",
+    year: "2024–2026",
+    color: "#C67A5C",
+    motif: "◑",
+    tracks: projects.map((p) => ({
+      title: p.title,
+      subtitle: p.tagline,
+      detail: p.description,
+      meta: p.tech[0],
+      href: `/projects/${p.slug}`,
+    })),
+  },
+  {
+    id: "lived",
+    title: "Places I've Been",
+    side: "the doer in me",
+    year: "2024–2026",
+    color: "#8B9E7E",
+    motif: "✦",
+    tracks: experiences.map((e) => ({
+      title: e.company,
+      subtitle: e.role,
+      detail: e.bullets[0],
+      meta: e.current ? "now playing" : `${e.startDate} – ${e.endDate}`,
+    })),
+  },
+  {
+    id: "mind",
+    title: "On My Mind",
+    side: "the dreamer in me",
+    year: "b-sides & demos",
+    color: "#D4A96A",
+    motif: "☾",
+    tracks: thoughts.map((t) => ({
+      title: t.content,
+      subtitle:
+        t.type === "quote"
+          ? t.source
+            ? `— ${t.source}`
+            : "a quote"
+          : t.type === "note"
+          ? "note to self"
+          : "reflection",
+      meta: t.date,
+    })),
   },
 ];

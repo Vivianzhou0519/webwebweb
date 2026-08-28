@@ -7,9 +7,9 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { label: "The Crate", href: "#records" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Photos", href: "#photos" },
   { label: "Thoughts", href: "#thoughts" },
 ];
 

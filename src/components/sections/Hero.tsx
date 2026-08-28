@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const container = {
   hidden: {},
@@ -80,28 +78,6 @@ export function Hero() {
           Full-stack developer who builds playful, thoughtful software.
           I like warm colors, clean code, and making things that feel good to use.
         </motion.p>
-
-        <motion.div
-          variants={item}
-          className="flex flex-wrap items-center justify-center gap-3"
-        >
-          <MagneticButton href="https://github.com/vivianzhou">
-            <Github size={16} />
-            GitHub
-          </MagneticButton>
-          <MagneticButton href="https://linkedin.com/in/vivianzhou">
-            <Linkedin size={16} />
-            LinkedIn
-          </MagneticButton>
-          <MagneticButton href="mailto:hello@vivianzhou.com">
-            <Mail size={16} />
-            Email
-          </MagneticButton>
-          <MagneticButton href="/resume.pdf">
-            <FileText size={16} />
-            Resume
-          </MagneticButton>
-        </motion.div>
 
         {/* Scroll indicator */}
         <motion.div

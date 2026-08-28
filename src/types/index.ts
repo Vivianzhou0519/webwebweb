@@ -35,3 +35,22 @@ export interface Thought {
   date?: string;
   source?: string;
 }
+
+export interface AlbumTrack {
+  title: string;
+  subtitle?: string;
+  detail?: string;
+  meta?: string;
+  href?: string;
+}
+
+export interface Album {
+  id: string;
+  title: string;
+  /** the "one part of me" line */
+  side: string;
+  year?: string;
+  color: string;
+  motif: string;
+  tracks: AlbumTrack[];
+}
